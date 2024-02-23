@@ -1,0 +1,14 @@
+{
+  "name": "classes",
+  "version": "1.0.0",
+  "description": "All my classes in one place",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zidanis16",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.3.0"
+  }
+}
