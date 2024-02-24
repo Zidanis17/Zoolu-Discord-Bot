@@ -6,8 +6,8 @@ const prefix = '>';
 
 module.exports = async (Discord, client, message) => {
     const user = await blackListModels.findOne({userID: message.author.id});
-    let databaseGuild = await guildModel.findOne({guildID: message.guild.id})
-
+    let databaseGuild = await guildModel.findOne({guildID: message.guild.id});
+    
     if(databaseGuild === null){
         const profile = await guildModel.create({
             guildID: message.guild.id,
@@ -16,7 +16,6 @@ module.exports = async (Discord, client, message) => {
         const newprofile = await profile.save()
         databaseGuild = newprofile
     }
-
     if(user !== null) return;
     functions.addXp(message)
 

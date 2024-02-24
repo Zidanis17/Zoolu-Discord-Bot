@@ -94,6 +94,14 @@ client.music.events.on("emptyQueue", (queue) => {
     queue.metadata.channel.send("✅ | Queue finished!");
 });
 
-client.music.events.on("error", (err) => console.log(err.message));
+client.music.events.on('error', (queue, error) => {
+    console.log(`General player error event: ${error.message}`);
+    console.log(error);
+});
+
+client.music.events.on('playerError', (queue, error) => {
+    console.log(`Player error event: ${error.message}`);
+    console.log(error);
+});
 
 client.login(process.env.DisToken);

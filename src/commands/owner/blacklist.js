@@ -24,6 +24,7 @@ module.exports = {
         reason = args[2] ? args[2] : 'none'
 
         const profile = await blackListModels.create({
+            userName: mention.username,
             userID: mention.id,
             duration: time !== null? Date.now() + ms(regex.exec(args[1])[0]): 'none',
             reason: reason

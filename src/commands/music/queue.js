@@ -1,4 +1,4 @@
-const DiscordPages = require("discord-pages");
+const DiscordPages = require("../../extra-Modules/discord-pages");
 
 module.exports = {
     name:'queue',

@@ -1,4 +1,4 @@
-const DiscordPages = require("discord-pages");
+const DiscordPages = require("../../extra-Modules/discord-pages");
 const rankModel = require('../../Schemas/rankModel');
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
 
                 for(; o < t ; o++){
                     if(allMemberProf[o] !== undefined){
-                        playlistPages.addField(`${o + 1}- ${allMemberProf[o].memberName}` , `Level: ${allMemberProf[o].level} - Xp: ${allMemberProf[o].xp} `);
+                        playlistPages.addFields([{name:`${o + 1}- ${allMemberProf[o].memberName}` , value:`Level: ${allMemberProf[o].level} - Xp: ${allMemberProf[o].xp} `}]);
                     }
                 }
             pages.push(playlistPages);
