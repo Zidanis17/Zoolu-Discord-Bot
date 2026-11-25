@@ -6,7 +6,8 @@ const discordPlayer = require('discord-player');
 const mongoose = require('mongoose');
 require('dotenv').config()
 const Queues = new Map();
-
+const clientID = process.env.SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
 const client = new Discord.Client({
     resetTimeOffset: 0, 
@@ -30,8 +31,8 @@ client.music = new discordPlayer.Player(client);
 client.music.extractors.loadDefault();
 
 client.music.spot = new spotApi({
-    clientId: '4c8d7a2d578842829f185ef6f1580e8c',
-    clientSecret: '57daa21c5ab748abaf4c8ae4772e6f09',
+    clientId: clientID,
+    clientSecret: clientSecret,
 });
 
 connectToSpotify();
